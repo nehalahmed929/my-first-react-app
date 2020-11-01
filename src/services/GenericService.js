@@ -9,8 +9,9 @@ class GenericService {
       axios
         .get(url)
         .then((res) => {
+          console.log("inside generic res" + res.data);
+          alert("inside generic service data: " + res.data);
           resolve(res.data);
-          console.log(res.data);
         })
         .catch((err) => {
           reject(err);

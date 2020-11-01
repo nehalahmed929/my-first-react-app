@@ -10,6 +10,7 @@ class ProductsService extends GenericService {
   getProducts = () => {
     this.get("recipes");
   };
+
   deleteProduct = (id) => {
     this.delete("recipes/" + id);
   };

@@ -27,16 +27,16 @@ const Products = (props) => {
   };
 
   const getProducts = () => {
-    // productService
-    //   .getProducts()
-    // .then((data) => {
-    console.log(productService.getProducts());
-    setProducts(productService.getProducts());
-    // console.log(data);
-    // })
-    // .catch((error) => {
-    //   console.log(error);
-    // });
+    productService
+      .getProducts()
+      .then((data) => {
+        // console.log("inside products" + productService.getProducts();
+        setProducts(data);
+        console.log("inside products" + data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
   // getProducts();
   React.useEffect(getProducts, []);
