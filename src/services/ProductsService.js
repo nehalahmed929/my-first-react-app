@@ -7,6 +7,7 @@ class ProductsService extends GenericService {
   addProduct = (data) => {
     this.post("recipes", data);
   };
+
   getProducts = () => {
     this.get("recipes");
   };
