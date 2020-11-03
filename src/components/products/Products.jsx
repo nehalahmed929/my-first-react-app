@@ -32,7 +32,6 @@ const Products = (props) => {
       .then((data) => {
         // console.log("inside products" + productService.getProducts();
         setProducts(data);
-        console.log("inside products" + data);
       })
       .catch((error) => {
         console.log(error);
@@ -57,7 +56,11 @@ const Products = (props) => {
       ) : (
         <Grid container spacing={3}>
           {products.map((product, index) => (
-            <SingleProduct key={index} product={product} />
+            <SingleProduct
+              key={index}
+              product={product}
+              onDelete={getProducts}
+            />
           ))}
         </Grid>
       )}

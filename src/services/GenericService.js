@@ -5,56 +5,53 @@ class GenericService {
   constructor() {}
 
   get = (url) => {
-    new Promise((resolve, reject) => {
+    return new Promise((resolve, reject) => {
       axios
         .get(url)
         .then((res) => {
-          console.log("inside generic res" + res.data);
-          alert("inside generic service data: " + res.data);
-          resolve(res.data);
+          return resolve(res.data);
         })
         .catch((err) => {
-          reject(err);
+          return reject(err);
         });
     });
   };
 
   post = (url, data) => {
-    new Promise((resolve, reject) => {
+    return new Promise((resolve, reject) => {
       axios
         .post(url, data)
         .then((res) => {
-          resolve(res.data);
-          console.log(res.data);
+          return resolve(res);
         })
         .catch((err) => {
-          reject(err);
+          return reject(err);
         });
     });
   };
 
   put = (url, data) => {
-    new Promise((resolve, reject) => {
+    return new Promise((resolve, reject) => {
       axios
         .put(url, data)
         .then((res) => {
-          resolve(res.data);
+          return resolve(res.data);
         })
         .catch((err) => {
-          reject(err);
+          return reject(err);
         });
     });
   };
 
   delete = (url) => {
-    new Promise((resolve, reject) => {
+    return new Promise((resolve, reject) => {
       axios
         .delete(url)
         .then((res) => {
-          resolve(res.data);
+          return resolve(res.data);
         })
         .catch((err) => {
-          reject(err);
+          return reject(err);
         });
     });
   };

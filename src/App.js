@@ -9,6 +9,7 @@ import LandingPage from "./components/LandingPage";
 import NotFound from "./components/NotFound";
 import NewProduct from "./components/products/NewProduct";
 import Products from "./components/products/Products";
+import UpdateProduct from "./components/products/UpdateProduct";
 import TopMenu from "./components/TopMenu";
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
             <Route path="/contact-us" component={ContactUs} />
             <Route path="/not-found" component={NotFound} />
             <Route path="/products/new" component={NewProduct} />
+            <Route path="/products/update/:id" component={UpdateProduct} />
             <Route path="/products" component={Products} />
 
             <Redirect to="not-found" />

@@ -5,18 +5,23 @@ class ProductsService extends GenericService {
     super();
   }
   addProduct = (data) => {
-    this.post("recipes", data);
+    console.log(data);
+    return this.post("recipes", data);
   };
 
   getProducts = () => {
-    this.get("recipes");
+    return this.get("recipes");
   };
 
   deleteProduct = (id) => {
-    this.delete("recipes/" + id);
+    return this.delete("recipes/" + id);
   };
   updateProduct = (id, data) => {
-    this.put("recipes/" + id, data);
+    return this.put("recipes/" + id, data);
+  };
+
+  getSingleProduct = (id) => {
+    return this.get("recipes/" + id);
   };
 }
 
