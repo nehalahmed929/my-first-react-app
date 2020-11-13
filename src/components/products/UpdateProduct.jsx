@@ -3,16 +3,16 @@ import React from "react";
 import productService from "../../services/ProductsService";
 
 const UpdateProduct = (props) => {
-  const [title, setTitle] = React.useState("");
-  const [body, setBody] = React.useState("");
+  const [name, setName] = React.useState("");
+  const [price, setPrice] = React.useState("");
   console.log(props);
   const id = props.match.params.id;
   React.useEffect(() => {
     productService
       .getSingleProduct(id)
       .then((p) => {
-        setTitle(p.title);
-        setBody(p.body);
+        setName(p.name);
+        setPrice(p.price);
       })
       .catch((err) => {
         console.log(err);
@@ -29,15 +29,15 @@ const UpdateProduct = (props) => {
           id="standard-basic"
           label="Title"
           fullWidth
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
+          value={name}
+          onChange={(e) => setName(e.target.value)}
         />
         <TextField
           id="standard-basic"
           label="Registration City"
           fullWidth
-          value={body}
-          onChange={(e) => setBody(e.target.value)}
+          value={price}
+          onChange={(e) => setPrice(e.target.value)}
         />
       </Grid>
       <Grid item xs={3}></Grid>
@@ -48,7 +48,7 @@ const UpdateProduct = (props) => {
           color="primary"
           onClick={(e) => {
             productService
-              .updateProduct(id, { title, body })
+              .updateProduct(id, { name, price })
               .then((res) => {
                 props.history.push("/products");
                 console.log(res);
